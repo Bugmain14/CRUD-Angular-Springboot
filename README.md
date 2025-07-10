@@ -49,5 +49,6 @@ App disponible en: `http://localhost:4200`
 
 Andrés Caicedo  
 📧 bugmain10@gmail.com  
-📱 +57 317 872 0820  
+📱 +57 317 872 0820
+🌐 [Linkedin](https://www.linkedin.com/in/fredy-andres-caicedo-paladines-a52a85247/)
 🌐 [GitHub](https://github.com/Bugmain14)
