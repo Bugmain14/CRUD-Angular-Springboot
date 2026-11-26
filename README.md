@@ -1,54 +1,45 @@
-# CRUD de Usuarios con Angular y Spring Boot
+# Gestión de Empleados - API REST
 
-Aplicación web full-stack para gestionar usuarios mediante operaciones CRUD (crear, leer, actualizar, eliminar). Desarrollada con Angular 15 para el frontend y Spring Boot 3 para el backend.
+API REST para gestionar empleados (crear, listar, consultar, actualizar y eliminar), desarrollada con Spring Boot. El frontend en Angular está en [CRUD-Angular-Springboot-frontend](https://github.com/Bugmain14/CRUD-Angular-Springboot-frontend).
 
-## 🛠 Tecnologías utilizadas
+## Tecnologías
 
-- Angular 15, Angular Material
-- Spring Boot 3, Java 17
-- MySQL / PostgreSQL
-- Node.js, Maven
+- Java 17 y Spring Boot 3.4
+- Spring Data JPA y Bean Validation
+- MySQL
+- Lombok y Maven
 
-## 📂 Estructura del repositorio
+## Arquitectura
 
 ```
-/frontend → Proyecto Angular  
-/backend  → API REST en Spring Boot
+empleados-backend/src/main/java/ac/empleados/
+├── controller/   Endpoints REST
+├── service/      Lógica de negocio
+├── repository/   Acceso a datos con JPA
+├── model/        Entidad Employee
+├── dto/          Datos de entrada con validaciones
+└── exception/    Manejo global de errores
 ```
 
-## ⚙️ Cómo ejecutar el proyecto
+## Endpoints
 
-### Backend
+| Método | Ruta | Descripción |
+|---|---|---|
+| GET | `/employees` | Listar empleados |
+| GET | `/employees/{id}` | Consultar un empleado |
+| POST | `/employees` | Crear empleado |
+| PUT | `/employees/{id}` | Actualizar empleado |
+| DELETE | `/employees/{id}` | Eliminar empleado |
+
+## Cómo ejecutarlo
+
+1. Crea la base de datos `employeesystem` en MySQL.
+2. Define las credenciales en las variables de entorno `DB_USERNAME` y `DB_PASSWORD`.
+3. Ejecuta:
 
 ```bash
-cd backend
+cd empleados-backend
 ./mvnw spring-boot:run
 ```
 
-API disponible en: `http://localhost:8080`
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-ng serve
-```
-
-App disponible en: `http://localhost:4200`
-
-## ✨ Funcionalidades
-
-- Formulario reactivo para crear y editar usuarios
-- Listado paginado
-- Validaciones básicas
-- Comunicación frontend-backend vía HTTP
-- Arquitectura desacoplada
-
-## 📫 Contacto
-
-Andrés Caicedo  
-📧 bugmain10@gmail.com  
-📱 +57 317 872 0820
-🌐 [Linkedin](https://www.linkedin.com/in/fredy-andres-caicedo-paladines-a52a85247/)
-🌐 [GitHub](https://github.com/Bugmain14)
+La API queda disponible en `http://localhost:8080`.
